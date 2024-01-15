@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100vh;
+}
+body {
+  height: 100%;
+}
+
+a {
+  color: #00b7ff;
+  text-decoration: none;
+}
+
+header {
+  background-color: green;
+  color: white;
+  padding: 1.3rem;
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  background-color: #777;
+  color: white;
+  list-style: none;
+}
+
+nav li {
+  padding: 16px 18px 10px 18px;
+  margin-bottom: 3px;
+  border-bottom: 3px solid transparent;
+  transition: 0.7s;
+}
+
+nav li:hover {
+  border-bottom: 3px solid yellow;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #777;
+  text-align: center;
+  padding: 0.8rem;
+}

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  link(rel="stylesheet", href="/css/input.css")
+  form(action="/users",method="POST")
+    div
+      input(placeholder="이름을 입력하세요", name="name")
+    div
+      select(name="dept")
+        option(value="") 학과를 선택하세요 
+        option(value="컴퓨터공학") 컴퓨터공학
+        option(value="전자공학") 전자공학
+        option(value="무역학과") 무역학과
+        option(value="수학학과") 수학학과
+    div
+      input(placeholder="학년",name="grade",type="number")
+    div 
+      button 보내기

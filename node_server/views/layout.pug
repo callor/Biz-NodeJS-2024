@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta( name='viewport', content='width=device-width, initial-scale=1')
+    title= title
+    link(rel='stylesheet', href='/css/main.css')
+    script(src="/js/main.js")
+  body
+    header 
+      h1 나의 홈페이지
+      p 나의 홈페이지에 오신것을 환영합니다
+    nav 
+      ul 
+        li.home Home
+        li.notice 공지사항
+        li.bbs 자유게시판
+        li.login 로그인
+        li.join 회원가입
+    block content
+
+    footer
+      address CopyRight &copy; callor@callor.com
