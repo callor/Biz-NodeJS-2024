@@ -1,0 +1,43 @@
+h1 {
+  width: 80%;
+  margin: 20px auto;
+}
+table {
+  border: 1px solid green;
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid red;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+}
+
+tbody tr:nth-last-of-type(odd) {
+  background-color: #eee;
+}
+
+div.btn_box {
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px 0;
+  background-color: #eee;
+  text-align: right;
+}
+
+div.btn_box a {
+  display: inline-block;
+  padding: 12px 16px;
+  background-color: #6367ef;
+  color: white;
+  font-weight: 900;
+  border-radius: 10px;
+}
+
+div.btn_box a:hover {
+  background-color: #262ce7;
+}
