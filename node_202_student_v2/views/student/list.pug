@@ -1,0 +1,14 @@
+extends ../layout
+
+
+block content
+    link(rel="stylesheet", href="/css/list.css")
+    h1.student 학생정보
+    table.student.list 
+        thead 
+            tr
+                th 학번
+                th 이름
+                th 학과
+    div.student.btn_box 
+        a(href="/student/insert") 학생정보 추가
