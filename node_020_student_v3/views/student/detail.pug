@@ -24,5 +24,5 @@ block content
         span= STD.st_addr 
     .btn_box 
         button.btn_list 리스트로
-        button.btn_update 수정
+        button.btn_update(data-num=`${STD.st_num}`) 수정
         button.btn_delete(data-num=`${STD.st_num}`) 삭제

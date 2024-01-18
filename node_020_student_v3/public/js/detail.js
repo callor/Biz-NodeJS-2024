@@ -22,4 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
       document.location.replace(`/student/${st_num}/delete`);
     }
   });
+
+  btn_update.addEventListener("click", (e) => {
+    const st_num = e.target.dataset.num;
+    if (st_num) {
+      document.location.replace(`/student/${st_num}/update`);
+    } else {
+      alert("학번 정보가 잘못되었습니다");
+    }
+  });
 });
