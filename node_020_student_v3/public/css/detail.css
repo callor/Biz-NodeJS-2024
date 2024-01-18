@@ -22,3 +22,38 @@ span {
   flex: 3;
   background-color: #eee;
 }
+
+div.btn_box {
+  display: flex;
+  border: none;
+  justify-content: right;
+}
+
+div.btn_box button {
+  margin: 10px 0 10px 10px;
+  margin: 10px;
+  margin-right: 0;
+
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  transition: 0.7s;
+}
+
+div.btn_box button:hover {
+  opacity: 0.7;
+}
+
+button.btn_list {
+  background-color: green;
+}
+
+button.btn_update {
+  background-color: blue;
+}
+
+button.btn_delete {
+  background-color: red;
+}

@@ -95,5 +95,17 @@ router.get("/:st_num/check", (req, res) => {
   });
 });
 
+router.get("/:st_num/delete", (req, res) => {
+  const st_num = req.params.st_num;
+  const sql = " DELETE FROM tbl_student WHERE st_num = ? ";
+  dbConn.query(sql, [st_num], (err, result) => {
+    if (err) {
+      return res.json(err);
+    } else {
+      return res.redirect("/student/");
+    }
+  });
+});
+
 // router 객체를 다른곳에서 import 할수 있도록 export 하기
 export default router;
