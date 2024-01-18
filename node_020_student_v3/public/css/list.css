@@ -1,0 +1,56 @@
+.student {
+  width: 80%;
+  margin: 5px auto;
+}
+
+h1.student {
+  padding: 1.1rem;
+  color: green;
+}
+
+table.student {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+th {
+  border-top: 1px solid #bbb;
+  background-color: #eee;
+}
+
+tr:nth-of-type(odd) {
+  background-color: #eee;
+}
+
+tr:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+
+th:nth-last-of-type(1),
+td:nth-last-of-type(1) {
+  border-right: none;
+}
+
+div.student {
+  text-align: right;
+}
+
+div.student a {
+  display: inline-block;
+  padding: 12px 16px;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+}
+
+div.student a:hover {
+  background-color: #8080ed;
+}

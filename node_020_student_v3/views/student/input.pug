@@ -1,0 +1,14 @@
+extends ../layout
+
+block content 
+    link(rel="stylesheet", href="/css/input.css")
+    script(src="/js/input.js")
+    h3.student 학생정보 입력
+    form.student.input(method="POST")
+        input#st_num(name="st_num", placeholder="학번을 입력해 주세요")
+        div.student.error.st_num
+        input#st_name(name="st_name",placeholder="이름을 입력해 주세요")
+        div.student.error.st_name
+        input#st_dept(name="st_dept",placeholder="학과를 입력해 주세요")
+        div.student.error.st_dept
+        button(type="button") 전송
