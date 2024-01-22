@@ -3,6 +3,7 @@
 section.books {
   flex: 1;
   display: flex;
+  overflow: auto;
 }
 
 aside {
@@ -38,4 +39,21 @@ article.body {
   flex: 5;
   border: 1px solid green;
   height: 100%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 768px) {
+  section.books {
+    flex-direction: column;
+  }
+
+  aside {
+    flex: 0;
+    flex-direction: row;
+    padding-top: 0;
+    a {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  }
 }
