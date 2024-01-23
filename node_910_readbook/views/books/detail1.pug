@@ -1,0 +1,29 @@
+extends ../books/main
+
+block book_content
+    link(rel="stylesheet", href="/css/books/detail.css")
+    script(src="/js/books/detail.js")
+    article.books.detail
+        div.detail 
+            strong ISBN
+            span= book.isbn 
+            strong 도서명
+            span= book.title 
+        div.detail 
+            strong 출판사
+            span= book.publisher 
+            strong 저자
+            span= book.author 
+            strong 역자
+            span 
+        div.detail 
+            strong 정가
+            span= book.price 
+            strong 할인가
+            span= book.discount 
+            strong 출판일자
+            span 
+        div.detail.btn
+            button.list 리스트로
+            button.update(data-isbn= `${book.isbn}`) 수정하기
+            button.delete(data-isbn= `${book.isbn}`) 삭제하기

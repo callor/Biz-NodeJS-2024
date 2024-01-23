@@ -6,11 +6,11 @@ block book_content
         fieldset 
             legend 도서정보 입력
             div.books.input
-                input(type="number",inputmode="numeric", name="isbn",placeholder="ISBN, 도서코드")
-                input(type="text",name="title",placeholder="도서명")
+                input(type="number",value= `${book.isbn}`, inputmode="numeric", name="isbn",placeholder="ISBN, 도서코드")
+                input(type="text",value= `${book.title}`, name="title",placeholder="도서명")
             div.books.input
-                input(type="text",name="publisher",placeholder="출판사")
-                input(type="text",name="author",placeholder="저자")
+                input(type="text",value= `${book.publisher}`, name="publisher",placeholder="출판사")
+                input(type="text",value= `${book.author}`, name="author",placeholder="저자")
                 input(type="text",name="compile",placeholder="역자")
             div.books.input
                 input(type="number",inputmode="numeric",name="price",placeholder="정가")
