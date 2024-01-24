@@ -4,25 +4,25 @@ block book_content
     link(rel="stylesheet", href="/css/books/input.css")
     form.books(method="POST")
         fieldset 
-            legend 도서정보 #{book ? "수정" : "추가" }
+            legend 도서정보 #{book.isbn ? "수정" : "추가" }
             div.books.input
-                if book
-                    input(type="number",value= `${book ? book.isbn : ""}`, 
+                if book.isbn
+                    input(type="number",value= `${book.isbn}`, 
                         readonly
                         inputmode="numeric", name="isbn",placeholder="ISBN, 도서코드")
                 else
-                    input(type="number",value= `${book ? book.isbn : ""}`, 
+                    input(type="number",value= `${book.isbn}`, 
                         inputmode="numeric", name="isbn",placeholder="ISBN, 도서코드")
-                input(type="text",value= `${book ? book.title : "" }`, name="title",placeholder="도서명")
+                input(type="text",value= `${book.title}`, name="title",placeholder="도서명")
             div.books.input
-                input(type="text",value= `${book ? book.publisher : ""}`, name="publisher",placeholder="출판사")
-                input(type="text",value= `${book ? book.author : ""}`, name="author",placeholder="저자")
+                input(type="text",value= `${book.publisher}`, name="publisher",placeholder="출판사")
+                input(type="text",value= `${book.author}`, name="author",placeholder="저자")
                 input(type="text",name="compile",placeholder="역자")
             div.books.input
-                input(type="number",value= `${book ? book.price : 0}`, inputmode="numeric",name="price",placeholder="정가")
-                input(type="number",value= `${book ? book.discount : 0}`, inputmode="numeric",name="discount",placeholder="할인가")
-                input(type="date",name="pubdate",placeholder="발행일자")
+                input(type="number",value= `${book.price}`, inputmode="numeric",name="price",placeholder="정가")
+                input(type="number", value= `${book.discount}`, inputmode="numeric",name="discount",placeholder="할인가")
+                input(type="date",value= `${book.pubdate}`, name="pubdate",placeholder="발행일자")
             div.books.input
                 input.btn.list(type="button",value="리스트로")
                 input.btn.reset(type="reset",value="새로작성")
-                input.btn.submit(type="submit",value= `${book ? "수정하기" : "추가하기"}`)
+                input.btn.submit(type="submit",value= `${book.isbn ? "수정하기" : "추가하기"}`)

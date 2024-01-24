@@ -22,7 +22,7 @@ const normalizePort = (val) => {
 };
 
 
-const debug = createDebug('node-910-readbook:server');
+const debug = createDebug('node-910-readbook-v2:server');
 const port = normalizePort(process.env.PORT || "3000");
 
 /**

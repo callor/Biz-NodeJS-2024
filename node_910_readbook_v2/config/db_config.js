@@ -1,8 +1,8 @@
 export default {
   development: {
-    username: "***",
-    password: "****",
-    database: "****",
+    username: "root",
+    password: "!Biz8080",
+    database: "bookdb2",
     host: "127.0.0.1",
     dialect: "mysql",
     logging: true,
