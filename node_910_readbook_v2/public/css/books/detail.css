@@ -1,0 +1,61 @@
+article.books.detail {
+  width: 80%;
+  margin: 10px auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+
+  div.detail {
+    width: 80%;
+    margin: 10px auto;
+    display: flex;
+
+    strong,
+    span {
+      white-space: nowrap;
+      padding: 8px;
+      margin: 3px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+
+    strong {
+      width: 100px;
+      text-align: right;
+      color: blue;
+      opacity: 0.6;
+      background-color: #e9f0e9;
+    }
+    span {
+      flex: 2;
+      background-color: #e0e0ec;
+    }
+  }
+}
+
+div.detail.btn {
+  justify-content: center;
+  button {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    margin: 3px;
+    color: white;
+    border-radius: 10px;
+    &:hover {
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+    }
+  }
+}
+
+button.list {
+  background-color: green;
+}
+
+button.update {
+  background-color: blue;
+}
+
+button.delete {
+  background-color: orange;
+}

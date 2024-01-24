@@ -1,0 +1,30 @@
+extends ../books/main
+
+block book_content
+    link(rel="stylesheet", href="/css/books/list.css")
+    script(src="/js/books/list.js")
+    table.books
+        colgroup
+            col.isbn
+            col.title
+            col
+            col
+            col
+            col    
+        thead 
+            tr
+                th ISBN
+                th 도서명
+                th 출판사
+                th 저자
+                th 가격
+                th 할인가격
+        tbody
+            each book in books
+                tr(data-isbn=`${book.isbn}`)
+                    td= book.isbn 
+                    td= book.title
+                    td= book.publisher
+                    td= book.author
+                    td= book.price
+                    td= book.discount

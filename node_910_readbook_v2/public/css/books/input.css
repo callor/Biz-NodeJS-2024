@@ -1,0 +1,58 @@
+form.books {
+  width: 70%;
+  margin: 50px auto;
+
+  fieldset {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 2rem;
+  }
+  legend {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #3333c0;
+  }
+}
+
+div.books.input {
+  width: 90%;
+  margin: 5px auto;
+  display: flex;
+
+  input {
+    flex: 1;
+    padding: 12px;
+    margin: 0 5px;
+    outline: none;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    &:hover {
+      background-color: #eee;
+    }
+    &:focus {
+      border: 2px solid green;
+    }
+  }
+
+  input.btn {
+    margin: 15px auto;
+    flex: 0.3;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  input.btn.list {
+    background-color: greenyellow;
+    color: black;
+  }
+  input.btn.reset {
+    background-color: orange;
+    color: black;
+  }
+  input.btn.submit {
+    background-color: #3333c0;
+    color: white;
+  }
+}

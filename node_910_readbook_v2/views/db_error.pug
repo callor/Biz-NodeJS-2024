@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    style.
+        div.error {
+            color:red;
+            font-weight:bold;
+            font-size : 1.2rem;
+            width:80%;
+            margin:20px auto;
+        }
+    .error
+        h1= message
+        h3= code 
+        span= errno 
+        SQL= sql

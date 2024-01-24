@@ -16,13 +16,17 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 
+import DB from "../models/index.js";
+
 // import router modules
 import indexRouter from "../routes/index.js";
 import usersRouter from "../routes/users.js";
-import booksRouter from "../routes/books.js";
+// import booksRouter from "../routes/books.js";
 
 // create express framework
 const app = express();
+
+DB.sequelize.sync({ force: true });
 
 // helmet security module
 app.use(helmet());
@@ -45,7 +49,7 @@ app.use(express.static(path.join("public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 // /books/* 으로 요청이 들어오면 booksRouter 로 전달하라가
-app.use("/books", booksRouter);
+// app.use("/books", booksRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

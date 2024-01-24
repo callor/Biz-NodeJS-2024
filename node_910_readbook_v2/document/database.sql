@@ -112,8 +112,5 @@ REVOKE ALL PRIVILEGES ON
 *.* 
 FROM 'callor'@'localhost';
 
-USE bookdb2;
-DROP TABLE tbl_books;
-
 
 
