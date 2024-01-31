@@ -11,6 +11,7 @@ const join_btn_click_event = async () => {
     userid.select();
     return false;
   } else {
+    // Async 방식으로 Server 에 userid check 요청
     const response = await fetch(`/users/${userid.value}/check`);
     const json = await response.json();
     if (json.MESSAGE === "FOUND") {
