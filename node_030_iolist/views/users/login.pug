@@ -4,6 +4,8 @@ block content
     link(rel="stylesheet", href="/css/login.css")
     script(src="/js/login.js") 
     form.login(method="POST")
+        if NEED
+            div.error= NEED
         div
             input.login.userid(type="text",placeholder="USER ID",
             name="m_username")

@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
         url += "users/join";
       } else if (navText === NAV_TEXT.로그인) {
         url += "users/login";
+      } else if (navText === NAV_TEXT.로그아웃) {
+        url += "users/logout";
+      } else if (navText === NAV_TEXT.매입매출) {
+        url += "iolist/";
       }
       document.location.replace(url);
     }

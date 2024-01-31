@@ -31,3 +31,10 @@ form.login {
     }
   }
 }
+
+form.login div.error {
+  background-color: red;
+  color: yellow;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
