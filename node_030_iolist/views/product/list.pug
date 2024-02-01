@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    script(src="/js/product.js")
+    h1 상품관리
+    table.products
+        tr
+            th 상품코드
+            th 상품이름
+            th 품목
+        each item in PRODUCTS
+            tr(data-pcode=`${item.p_code}`)
+                td= item.p_code 
+                td= item.p_name 
+                td= item.p_item 
+

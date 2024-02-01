@@ -1,8 +1,23 @@
 import express from "express";
+import DB from "../models/index.js";
+const IOLIST = DB.models.tbl_iolist;
+const DEPTS = DB.models.tbl_depts;
+const PRODUCTS = DB.models.tbl_products;
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  return res.render("iolist/list");
+  try {
+    const rows = await IOLIST.findAll({
+      include: [
+        { model: PRODUCTS, as: "IO_상품" },
+        { model: DEPTS, as: "IO_거래처" },
+      ],
+    });
+    // return res.json(rows);
+    return res.render("iolist/list", { IOLIST: rows });
+  } catch (error) {
+    return res.json(error);
+  }
 });
 
 router.get("/insert", (req, res) => {

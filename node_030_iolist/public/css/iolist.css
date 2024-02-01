@@ -1,0 +1,47 @@
+.iolist {
+  width: 80%;
+  margin: 0 auto;
+}
+
+table.iolist {
+  background-color: #eee;
+  border-collapse: separate;
+  border-spacing: 0.5px;
+  th,
+  td {
+    text-align: left;
+    padding: 10px 12px;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    /* top, right, bottom, left 순서로 색상 지정 */
+    border-color: white #ddd #ddd white;
+    &:nth-last-of-type(1) {
+      border-right: 1px solid transparent;
+    }
+  }
+  th {
+    border-top: 1px solid #ddd;
+  }
+  tr {
+    &:hover {
+      background-color: #ddd !important;
+      cursor: pointer;
+    }
+    &:nth-of-type(even) {
+      background-color: #f9f9f9;
+    }
+  }
+}
+
+div.iolist.btn_box {
+  text-align: right;
+  a {
+    display: inline-block;
+    padding: 12px 0;
+  }
+  a:hover {
+    text-decoration: underline;
+    text-decoration-color: blue;
+    text-decoration-thickness: 2px;
+  }
+}

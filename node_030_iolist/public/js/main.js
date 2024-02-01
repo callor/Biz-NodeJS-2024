@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
         url += "users/logout";
       } else if (navText === NAV_TEXT.매입매출) {
         url += "iolist/";
+      } else if (navText === NAV_TEXT.상품관리) {
+        url += "products/";
       }
       document.location.replace(url);
     }
