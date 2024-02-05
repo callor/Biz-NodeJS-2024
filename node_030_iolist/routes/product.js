@@ -7,7 +7,10 @@ const DEPTS = DB.models.tbl_depts;
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  const rows = await PRODUCTS.findAll();
+  const rows = await PRODUCTS.findAll({
+    limit: 10,
+    order: [["p_code", "ASC"]],
+  });
   return res.render("product/list", { PRODUCTS: rows });
 });
 
