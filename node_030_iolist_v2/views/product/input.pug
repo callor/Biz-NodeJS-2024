@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+    link(rel="stylesheet", href="/css/product.css")
+    script(src="/js/product.js")
+    form.products(method="POST",enctype="multipart/form-data")
+        fieldset 
+            legend 상품입력
+            div 
+                label(for="p_code") 상품코드
+                input(type="text",name="p_code",id="p_code")
+                label(for="p_name") 상품이름
+                input(type="text",name="p_name",id="p_name")
+            div 
+                label(for="p_item") 품목
+                input(type="text",name="p_item",id="p_item")
+                label(for="p_std") 규격
+                input(type="text",name="p_std",id="p_std")
+            div 
+                label(for="p_iprice") 매입단가
+                input(type="text",name="p_iprice",id="p_iprice")
+                label(for="p_oprice") 매출단가
+                input(type="text",name="p_oprice",id="p_oprice")
+            div.img_box
+                img.img_add(src="/images/add_icon.svg",width="100px",height="100px",alt="추가아이콘") 
+                input(type="file",name="p_image",accept="image/*",id="p_image")
+                input#img_focus
+            div.btn_box
+                input(type="submit",value="저장")
+                input(type="reset",value="새로작성")
+
+//- 

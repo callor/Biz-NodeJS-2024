@@ -49,3 +49,32 @@ nav.main li {
     cursor: pointer;
   }
 }
+
+table.list {
+  margin: 20px auto;
+  min-width: 1148px;
+  border-collapse: separate;
+  border-spacing: 0.7;
+  tr {
+    background-color: #fafafa;
+    &:hover {
+      background-color: #e7e7e7 !important;
+      cursor: pointer;
+    }
+    &:nth-of-type(even) {
+      background-color: #f2f2f2;
+    }
+  }
+  th,
+  td {
+    text-align: left;
+    border: 1px solid transparent;
+    border: white #ccc #ccc white;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 10px 20px;
+  }
+  td {
+    background-color: #f2f2f2;
+  }
+}
