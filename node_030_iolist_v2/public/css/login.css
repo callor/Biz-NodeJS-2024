@@ -1,0 +1,40 @@
+form.login {
+  width: 50%;
+  margin: 20px auto;
+  div {
+    width: 80%;
+    margin: 5px auto;
+    display: flex;
+    justify-content: center;
+    input {
+      width: 60%;
+      padding: 8px;
+      transition: 0.7s;
+      &:hover {
+        background-color: #eee;
+      }
+      &:focus {
+        width: 80%;
+      }
+    }
+    span {
+      padding: 8px 12px;
+      &:nth-of-type(1) {
+        color: red;
+      }
+      &:nth-of-type(3) {
+        color: green;
+      }
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
+}
+
+form.login div.error {
+  background-color: red;
+  color: yellow;
+  font-size: 1.3rem;
+  font-weight: bold;
+}

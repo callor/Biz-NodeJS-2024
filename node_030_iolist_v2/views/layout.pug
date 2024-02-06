@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta( name='viewport', content='width=device-width, initial-scale=1')
+    title= title
+    link(rel='stylesheet', href='/css/main.css')
+    script(src="/js/main.js")
+  body
+    header 
+      h1 ERP 2024
+    nav.main 
+      ul
+        li Home
+        li 상품관리
+        li 거래처관리
+        li 매입매출
+        if user
+          li MyPAGE( #{user.m_username} )
+          li 로그아웃
+        else
+          li 로그인
+          li 회원가입
+
+    block content

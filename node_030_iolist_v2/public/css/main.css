@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  padding: 1.2rem;
+  text-align: center;
+}
+
+nav.main {
+  background-color: black;
+  color: white;
+}
+
+nav.main ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav.main li {
+  padding: 12px 16px 8px 16px;
+  margin: 3px;
+  border-bottom: 3px solid transparent;
+  transition: 0.7s;
+  &:nth-of-type(4) {
+    margin-left: auto;
+  }
+  &:nth-of-type(5) {
+    margin-left: auto;
+  }
+  &:hover {
+    border-bottom: 3px solid yellow;
+    cursor: pointer;
+  }
+}
