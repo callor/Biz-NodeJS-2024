@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       fileReader.readAsDataURL(blob);
 
-      // 복사 붙이한 파일을 input(type=file) tag 에 포함하기
+      // 복사 붙이기한 파일을 input(type=file) tag 에 포함하기
       const dataTransfer = new DataTransfer();
       dataTransfer.items.add(blob);
       input_image.files = dataTransfer.files;
