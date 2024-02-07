@@ -2,9 +2,16 @@ extends ../layout
 
 block content
     div.detail
-        h3 #{PRODUCT.p_name} 상품 자세히 보기
-        p= PRODUCT.p_code
-        p= PRODUCT.p_item
+        div.image
+            if PRODUCT.p_image_name
+                img(src=`/uploads/${PRODUCT.p_image_name}`,width="300px",
+                alt=`${PRODUCT.p_image_origin_name}`)
+            else 
+                img(src="/images/noImage.svg", width="300px" )
+        div
+            h3 #{PRODUCT.p_name} 상품 자세히 보기
+            p= PRODUCT.p_code
+            p= PRODUCT.p_item
     table.detail.iolist
         tr
             th 거래일자
