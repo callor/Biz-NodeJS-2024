@@ -1,0 +1,62 @@
+section.main {
+  display: flex;
+}
+
+div.aside {
+  flex: 1;
+  /* max-width: 50%; */
+  padding: 1rem;
+  /* background-color: #ccc; */
+  &:nth-of-type(1) {
+    border-right: 1px solid #ddd;
+  }
+}
+
+form.date {
+  display: flex;
+  input {
+    /* display: inline-block; */
+    width: 100%;
+    padding: 5px;
+    margin: 0 3px;
+    &:nth-of-type(1) {
+      margin-left: 0;
+    }
+    &:nth-last-of-type(1) {
+      margin-right: 0;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  li {
+    box-shadow: 2px 2px 2px 2px #ddd, 2px 2px 2px 2px #aaa;
+    margin: 10px 0;
+    padding: 5px;
+    /*
+    box 에 text 의 상하 위치가 가운데 정렬이 안될때
+    box 의 height 만큼 line-height 값을 지정하면
+    text 의 상하 위치가 가운데 정렬이 된다
+    */
+    line-height: 2.2rem;
+    img {
+      margin: 6px 5px -3px 5px;
+    }
+    &:hover {
+      background-color: #eee;
+      cursor: pointer;
+    }
+  }
+}
+
+form.input {
+  display: flex;
+  flex-direction: column;
+  input {
+    /* display: inline-block; */
+    width: 100%;
+    padding: 5px;
+    margin: 3px 0;
+  }
+}

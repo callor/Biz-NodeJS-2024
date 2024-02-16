@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  link(rel="stylesheet", href="/css/index.css")
+  script(src="/js/memo.js")
+  section.main 
+    div.aside
+      form.date
+        input.todate(type="text",value= `${toDate}`)
+        input.totime(type="text",value= `${toTime}`)
+        input.btn_new(type="button", value="새로작성")
+      ul
+        li 
+          img(src="/images/noImage.svg", alt="",width="20px")
+          span 설산에서 고행을
+        li
+          img(src="/images/noImage.svg", alt="",width="20px")
+          span 없는 사막이다 보이는
+        li
+          img(src="/images/noImage.svg", alt="",width="20px") 
+          span 하는 온갖 과실이
+    div.aside
+      form.input
+        input.tosubject(type="text",placeholder="제목을 입력하세요")
+        input.tomemo(type="text",placeholder="메모를 입력하세요")
+        input(type="file")
+        input.btn_save(type="button",value="저장")
