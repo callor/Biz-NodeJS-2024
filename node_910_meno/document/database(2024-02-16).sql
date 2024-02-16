@@ -13,5 +13,7 @@ CREATE TABLE tbl_memos (
 SHOW TABLES;
 DESC tbl_memos;
 
+DROP TABLE tbl_memos;
+SELECT * FROM tbl_memos;
 
 

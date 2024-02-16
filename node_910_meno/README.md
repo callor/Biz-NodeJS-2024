@@ -11,3 +11,8 @@
 ## 날짜 시간을 사용하기 위하여 moment 설치하기
 
 - `npm install moment`
+
+## 파일업로드를 위한 multer 설치하기
+
+- `npm install multer`
+- 파일 업로드 해킹 방지 도구 설치 : `npm install uuid`

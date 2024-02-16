@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      section {
+        display: flex;
+        border: 1px solid green;
+        padding: 5px;
+      }
+      div {
+        /* width: 100%; */
+        border: 1px solid blue;
+        display: flex;
+        input {
+          flex: 1;
+        }
+      }
+      span {
+        display: inline-block;
+        border: 1px solid red;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>나의 홈페이지</h1>
+    <section>
+      <div><span>1</span><span>2</span><span>3</span></div>
+      <div><span>4</span><span>5</span><span>6</span></div>
+    </section>
+    <section>
+      <div>
+        <input type="text" /><input type="text" /><input
+          type="text"
+        />
+      </div>
+      <div><input type="text" /><input type="text" /></div>
+    </section>
+  </body>
+</html>

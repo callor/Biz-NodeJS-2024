@@ -6,22 +6,20 @@ block content
   section.main 
     div.aside
       form.date
-        input.todate(type="text",value= `${toDate}`)
-        input.totime(type="text",value= `${toTime}`)
+        input.todate(type="text",value= `${toDate}`,name="m_date")
+        input.totime(type="text",value= `${toTime}`,name="m_time")
         input.btn_new(type="button", value="새로작성")
       ul
-        li 
-          img(src="/images/noImage.svg", alt="",width="20px")
-          span 설산에서 고행을
-        li
-          img(src="/images/noImage.svg", alt="",width="20px")
-          span 없는 사막이다 보이는
-        li
-          img(src="/images/noImage.svg", alt="",width="20px") 
-          span 하는 온갖 과실이
+        each MEMO in MEMOS
+          li 
+            if MEMO.m_image
+              img(src=`/images/${MEMO.m_image}` , alt="",width="20px")
+            else
+              img(src="/images/noImage.svg", alt="",width="20px")
+            span= MEMO.m_subject
     div.aside
-      form.input
-        input.tosubject(type="text",placeholder="제목을 입력하세요")
-        input.tomemo(type="text",placeholder="메모를 입력하세요")
-        input(type="file")
+      form.input(method="POST",enctype="multipart/form-data")
+        input.tosubject(type="text",placeholder="제목을 입력하세요",name="m_subject")
+        input.tomemo(type="text",placeholder="메모를 입력하세요",name="m_memo")
+        input(type="file",name="m_image")
         input.btn_save(type="button",value="저장")
