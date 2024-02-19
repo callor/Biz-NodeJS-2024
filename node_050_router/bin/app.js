@@ -16,57 +16,16 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 
-// MySQL Sequelize
-import DB from "../models/index.js";
-
 // import router modules
 import indexRouter from "../routes/index.js";
 import usersRouter from "../routes/users.js";
+import memoRouter from "../routes/memo.js";
 
 // create express framework
 const app = express();
 
 // helmet security module
 app.use(helmet());
-
-/*
-img-src 정책
-URL.createObjectURL() 함수를 사용하여
-가상으로 생성된 이미지를 img tag 의 src(소스)로
-사용할수 있도록 정책 설정하기
-
-*/
-const cspDirective = {
-  directives: {
-    defaultSrc: ["'self'"],
-    "img-src": ["'self'", "blob:", "data:"],
-    // imgSrc: ["'self'", "blob:", "data:"],
-    "script-src": [
-      "'self'",
-      "'unsafe-inline'",
-      "https://fontawesome.com/",
-    ],
-    "style-src": [
-      "'self'",
-      "'unsafe-inline'",
-      "https://fontawesome.com/",
-    ],
-  },
-};
-// https://fontawesome.com/
-
-// helmet 을 통해 막혀있는 정책중 csp 를 일부 완화 하기
-app.use(helmet.contentSecurityPolicy(cspDirective));
-
-// MySQL DB 연결
-// 주의!!! force 를 true 로 하면 기존의 Table 을 모두 DROP 한 후 재생성 한다
-DB.sequelize.sync({ force: false }).then((dbConn) => {
-  console.log(
-    dbConn.options.host,
-    dbConn.config.database,
-    "DB Connection OK"
-  );
-});
 
 // Disable the fingerprinting of this web technology.
 app.disable("x-powered-by");
@@ -85,6 +44,9 @@ app.use(express.static(path.join("public")));
 // router link enable, link connection
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+
+// http://localhost:3000/memo
+app.use("/memo", memoRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

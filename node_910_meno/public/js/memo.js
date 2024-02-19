@@ -1,12 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
   const date_form = document.querySelector("form.date");
   const input_form = document.querySelector("form.input");
+
   const btn_save = document.querySelector("input.btn_save");
   const btn_new = document.querySelector("input.btn_new");
+  const btn_delete = document.querySelector("input.btn_delete");
+
+  // 화면의 input tag 들 전체
   const toDate = date_form.querySelector("input.todate");
   const toTime = date_form.querySelector("input.totime");
+  const toSubject = input_form.querySelector("input.tosubject");
+  const toMemo = input_form.querySelector("input.tomemo");
+  const toImage = input_form.querySelector("input.toimage");
+  const memo_image = input_form.querySelector("img.memo.image");
 
   const memo_box = document.querySelector("ul.memo");
+
+  memo_image.addEventListener("click", () => {
+    toImage.click();
+  });
+
+  toImage.addEventListener("change", (event) => {
+    // 파일 열기에서 선택한 파일
+    const imageFile = event.target.files[0];
+    // URL.createObjectURL() 또는 webKitURL.createObjectURL() 함수중에
+    // 하나를 사용하여...
+    // 업로드한 이미지를 가상의 이미지(객체)로 변환하여
+    // 화면에 미리보기를 구현하라
+    // 이 함수는 CSP 정책에 따라 사용이 제한된다
+    // 이 함수를 사용하려면 WAS 에서 CSP 정책을 일부 풀어줘야 한다
+    const imageURL = (window.URL || webkitURL).createObjectURL(
+      imageFile
+    );
+    memo_image.src = imageURL;
+  });
 
   /*
   한개의 메모를 클릭하면 메모의 seq 값을 알고 싶다
@@ -45,18 +72,34 @@ document.addEventListener("DOMContentLoaded", () => {
       const res = await fetch(`/${seq}/get`);
       const json = await res.json();
       console.log(json);
+
+      toDate.value = json.m_date;
+      toTime.value = json.m_time;
+      toSubject.value = json.m_subject;
+      toMemo.value = json.m_memo;
+      // btn_save 는 input tag 를 사용한 button 이므로
+      // value 속성을 변경하면 화면에 보이는 text 가 변경된다
+      btn_save.value = "수정";
+      btn_save.classList.add("update");
+
+      // form.input 에 action 를 새롭게 지정하여
+      // 데이터 update 를 할수 있도록 한다
+      // input_form.action = `/update/${json.m_seq}`;
+      input_form.action = `/?seq=${json.m_seq}`;
+      btn_delete.type = "button";
     }
   });
 
   btn_new.addEventListener("click", async () => {
-    try {
-      const response = await fetch("/get_new_date");
-      const json = await response.json();
-      toDate.value = json.toDate;
-      toTime.value = json.toTime;
-    } catch (error) {
-      alert("서버 통신오류");
-    }
+    location.reload();
+    // try {
+    //   const response = await fetch("/get_new_date");
+    //   const json = await response.json();
+    //   toDate.value = json.toDate;
+    //   toTime.value = json.toTime;
+    // } catch (error) {
+    //   alert("서버 통신오류");
+    // }
   });
 
   btn_save.addEventListener("click", () => {

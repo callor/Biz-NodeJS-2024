@@ -23,18 +23,36 @@ router.get("/", async (req, res, next) => {
 });
 
 router.post("/", upLoad.single("m_image"), async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const imageFile = req.file;
-  console.log(imageFile);
-  try {
+  const m_seq = req.query.seq;
+  // console.log(imageFile);
+  // try {
+  req.body.m_image = imageFile?.filename;
+  req.body.m_author = "callor@callor.com";
+  if (m_seq) {
+    await MEMOS.update(req.body, { where: { m_seq } });
+  } else {
+    await MEMOS.create(req.body);
+  }
+  return res.redirect("/");
+  // } catch (error) {
+  //   return res.json(error);
+  // }
+});
+
+router.post(
+  "/update/:seq",
+  upLoad.single("m_image"),
+  async (req, res) => {
+    const seq = req.params.seq;
+    const imageFile = req.file;
     req.body.m_image = imageFile?.filename;
     req.body.m_author = "callor@callor.com";
-    await MEMOS.create(req.body);
+    await MEMOS.update(req.body, { where: { m_seq: seq } });
     return res.redirect("/");
-  } catch (error) {
-    return res.json(error);
   }
-});
+);
 
 router.get("/:seq/get", async (req, res) => {
   const seq = req.params.seq;
