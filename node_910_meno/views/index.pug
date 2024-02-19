@@ -9,14 +9,14 @@ block content
         input.todate(type="text",value= `${toDate}`,name="m_date")
         input.totime(type="text",value= `${toTime}`,name="m_time")
         input.btn_new(type="button", value="새로작성")
-      ul
+      ul.memo
         each MEMO in MEMOS
-          li 
+          li.memo.list(data-seq=`${MEMO.m_seq}`) 
             if MEMO.m_image
-              img(src=`/images/${MEMO.m_image}` , alt="",width="20px")
+              img.memo.item(src=`/images/${MEMO.m_image}` , alt="",width="20px")
             else
-              img(src="/images/noImage.svg", alt="",width="20px")
-            span= MEMO.m_subject
+              img.memo.item(src="/images/noImage.svg", alt="",width="20px")
+            span.memo.item= MEMO.m_subject
     div.aside
       form.input(method="POST",enctype="multipart/form-data")
         input.tosubject(type="text",placeholder="제목을 입력하세요",name="m_subject")
