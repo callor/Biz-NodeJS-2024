@@ -15,3 +15,7 @@ div.iolist.btn_box {
     text-decoration-thickness: 2px;
   }
 }
+
+table.iolist tr.delete {
+  text-decoration: line-through;
+}

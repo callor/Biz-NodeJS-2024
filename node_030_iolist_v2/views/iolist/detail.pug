@@ -1,0 +1,13 @@
+extend ../layout
+
+block content
+    script(src="/js/iolist.js")
+    h1 거래정보
+    p= IO_ITEM.io_date
+    p= IO_ITEM.io_time
+    p= IO_ITEM.io_pcode
+    p= IO_ITEM.io_dcode
+    p= IO_ITEM.io_delete
+
+    button.iolist.btn_delete(data-seq= `${IO_ITEM.io_seq}`) 삭제
+
