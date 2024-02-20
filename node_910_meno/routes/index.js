@@ -41,6 +41,16 @@ router.post("/", upLoad.single("m_image"), async (req, res) => {
   // }
 });
 
+router.get("/:seq/delete", async (req, res) => {
+  const m_seq = req.params.seq;
+
+  // PK 키 값으로 데이터를 SELECT 하고
+  // 데이터 정보를 destroy() 하여 데이터 삭제하는 방법
+  const rows = await MEMOS.findByPk(m_seq);
+  await rows.destroy();
+  return res.redirect("/");
+});
+
 router.post(
   "/update/:seq",
   upLoad.single("m_image"),
