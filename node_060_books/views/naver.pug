@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    script(src="/js/naver.js")
+    form(action="/naver")
+        input(placeholder="검색어",name="search")
+
+    table.book
+        tr
+            th ISBN
+            th 도서명
+            th 저자
+            th 출판사
+            th 가격(할인가)
+        each BOOK in BOOKS
+            tr(data-isbn=`${BOOK.isbn}`)
+                td= BOOK.isbn 
+                td= BOOK.title 
+                td= BOOK.author 
+                td= BOOK.publisher 
+                td #{Math.round(BOOK.discount / 0.9)}(#{BOOK.discount})
